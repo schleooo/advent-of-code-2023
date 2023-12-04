@@ -12,8 +12,10 @@ for (int i = 0; i < lines.Length; i++)
     sumB += GetBallPower(lines[i]);
 }
 
-System.Console.WriteLine(sumA); //2283
-System.Console.WriteLine(sumB); //78669
+System.Console.WriteLine("---");
+System.Console.WriteLine("Part One: " + sumA); 
+System.Console.WriteLine("Part Two: " + sumB);
+System.Console.WriteLine("---");
 
 
 //Methods

@@ -61,8 +61,8 @@ for (int y = 0; y < lines.Length; y++)
 }
 
 System.Console.WriteLine("---");
-System.Console.WriteLine("Part One: " + sumA); //Part One: 540131
-System.Console.WriteLine("Part Two: " + sumB); //Part Two: 86879020
+System.Console.WriteLine("Part One: " + sumA); 
+System.Console.WriteLine("Part Two: " + sumB);
 System.Console.WriteLine("---");
 
 

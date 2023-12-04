@@ -28,9 +28,9 @@ foreach (string s in lines)
     sumB += int.Parse(numberOnlyB[0]+""+numberOnlyB[numberOnlyB.Length-1]);
 }
 
-System.Console.WriteLine("------");
-System.Console.WriteLine("Aufgabe 1: " + sumA); //54561
-System.Console.WriteLine("Aufgabe 2: " + sumB); //54076
-System.Console.WriteLine("------");
+System.Console.WriteLine("---");
+System.Console.WriteLine("Part one: " + sumA);
+System.Console.WriteLine("Part two: " + sumB);
+System.Console.WriteLine("---");
 
 
