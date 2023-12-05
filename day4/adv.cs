@@ -46,8 +46,8 @@ foreach (Card card in cards)
 }
 
 System.Console.WriteLine("---");
-System.Console.WriteLine("Part one: " + sumA); //Part one: 18653
-System.Console.WriteLine("Part two: " + sumB); //Part two: 5921508
+System.Console.WriteLine("Part one: " + sumA);
+System.Console.WriteLine("Part two: " + sumB);
 System.Console.WriteLine("---");
 
 class Card{
