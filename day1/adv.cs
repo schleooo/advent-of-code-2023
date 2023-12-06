@@ -1,36 +1,21 @@
-﻿using System.Text.RegularExpressions;
+﻿string[] lines = File.ReadAllLines(@"input.txt");
 
-string[] lines = System.IO.File.ReadAllLines(@"input.txt");
 
-int sumA = 0;
-int sumB = 0;
+System.Console.WriteLine("---");
 
-foreach (string s in lines)
-{
-    //Part One
-    string numberOnlyA = Regex.Replace(s, "[^0-9.]", "");
-    sumA += int.Parse(numberOnlyA[0]+""+numberOnlyA[numberOnlyA.Length-1]);
+var watch = System.Diagnostics.Stopwatch.StartNew();
+System.Console.WriteLine("Part One: " + Methods.GetPartOne(lines) + TimeElapsed()); //22ms
+System.Console.WriteLine("Part Two: " + Methods.GetPartTwo(lines) + TimeElapsed()); //7ms
 
-    //Part Two
-    string numberOnlyB = Regex.Replace(s, "one", "one1one");
-    numberOnlyB = Regex.Replace(numberOnlyB, "two", "two2two");
-    numberOnlyB = Regex.Replace(numberOnlyB, "three", "three3three");
-    numberOnlyB = Regex.Replace(numberOnlyB, "four", "four4four");
-    numberOnlyB = Regex.Replace(numberOnlyB, "five", "five5five");
-    numberOnlyB = Regex.Replace(numberOnlyB, "six", "six6six");
-    numberOnlyB = Regex.Replace(numberOnlyB, "seven", "seven7seven");
-    numberOnlyB = Regex.Replace(numberOnlyB, "eight", "eight8eight");
-    numberOnlyB = Regex.Replace(numberOnlyB, "nine", "nine9nine");
-    numberOnlyB = Regex.Replace(numberOnlyB, "zero", "zero0zero");
+System.Console.WriteLine("---");
 
-    numberOnlyB = Regex.Replace(numberOnlyB, "[^0-9.]", "");
 
-    sumB += int.Parse(numberOnlyB[0]+""+numberOnlyB[numberOnlyB.Length-1]);
+//returns a string of the elapsed time and resets the timer
+string TimeElapsed(bool afterText = true){
+    var elapsed = watch.ElapsedMilliseconds;
+    watch.Restart();
+    if(afterText) return"   (" + elapsed + "ms)";
+    else return"(" + elapsed + "ms)";
 }
-
-System.Console.WriteLine("---");
-System.Console.WriteLine("Part one: " + sumA);
-System.Console.WriteLine("Part two: " + sumB);
-System.Console.WriteLine("---");
 
 

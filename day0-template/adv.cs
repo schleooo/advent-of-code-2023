@@ -1,13 +1,21 @@
-﻿string[] lines = System.IO.File.ReadAllLines(@"input.txt");
+﻿string[] lines = File.ReadAllLines(@"input.txt");
 
-//Part one
 
-foreach (string s in lines)
-{
-    
+System.Console.WriteLine("---");
+
+var watch = System.Diagnostics.Stopwatch.StartNew();
+System.Console.WriteLine("Part One: " + Methods.GetPartOne(lines) + TimeElapsed());
+System.Console.WriteLine("Part Two: " + Methods.GetPartTwo(lines) + TimeElapsed());
+
+System.Console.WriteLine("---");
+
+
+//returns a string of the elapsed time and resets the timer
+string TimeElapsed(bool afterText = true){
+    var elapsed = watch.ElapsedMilliseconds;
+    watch.Restart();
+    if(afterText) return"   (" + elapsed + "ms)";
+    else return"(" + elapsed + "ms)";
 }
 
-System.Console.WriteLine();
-
-//Part two
 
